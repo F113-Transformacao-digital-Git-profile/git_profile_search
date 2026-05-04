@@ -11,8 +11,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
 // Importando os componentes Home e Repos
-import Home from "./routes/Home.tsx";
-import Repos from "./routes/Repos.tsx";
+import Home from "./routes/home.tsx";
+import Repos from "./routes/repos.tsx";
 
 // Criando o router para a aplicação invocando a função createBrowserRouter
 // Dentro dela, passa um array que contém um objeto com a rota e o componente que será renderizado
