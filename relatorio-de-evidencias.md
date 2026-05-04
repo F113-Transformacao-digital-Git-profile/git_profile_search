@@ -10,9 +10,10 @@
 **Evidências (Prints):**
 
 > **Antes (Falha no Build da Vercel):**
-> ![Antes - Erro Vercel](.img-evidencias\antes-da-correcao-Home.png)
+> ![Antes - Erro Vercel](img-evidencias\antes-da-correcao-Home.png)
 
 
 > **Depois (Deploy com Sucesso na Vercel):**
-> ![Depois - Vercel Sucesso](./caminho-da-imagem/depois-vercel-deploy-sucesso.png)
-> *(Adicione aqui o print do painel da Vercel mostrando o status "Ready" ou verdinho)*
+> ![Depois - Vercel Sucesso](img-evidencias\depois-dacorrecao-home.png)
+
+
