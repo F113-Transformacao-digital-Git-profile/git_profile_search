@@ -32,8 +32,11 @@ const Home = () => {
     // Resetando o estado de erro para false e o estado de usuário para null
     setError(false);
     setUser(null);
+    const token = import.meta.env.VITE_GITHUB_TOKEN;
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
     // Fazendo uma requisição para a API do GitHub com o nome de usuário fornecido
-    const res = await fetch(`https://api.github.com/users/${userName}`);
+    const res = await fetch(`https://api.github.com/users/${userName}`, { headers });
 
     // Convertendo a resposta para JSON
     const data = await res.json();
