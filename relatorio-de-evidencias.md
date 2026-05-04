@@ -22,4 +22,9 @@
 > **Depois (Deploy com Sucesso na Vercel):**
 > ![Depois - Vercel Sucesso](img-evidencias\depois-dacorrecao-home.png)
 
+---
 
+### Tarefa: [INFRA] Configuração de GitHub Personal Access Token (Rate Limit)
+**Ação Realizada:** Implementação de autenticação via Token nas requisições da API do GitHub.
+
+**Descrição:** Para contornar o limite restrito de 60 requisições por hora para chamadas não autenticadas, configuramos a aplicação para utilizar um *Personal Access Token* (PAT). O token foi configurado como variável de ambiente (`VITE_GITHUB_TOKEN`) no arquivo `.env` local e no painel administrativo da Vercel. O código nos componentes `Home.tsx` e `Repos.tsx` foi atualizado para incluir este token no cabeçalho `Authorization` das requisições `fetch`. Esta medida previne que a aplicação pare de funcionar por excesso de requisições durante a fase de testes e avaliação do projeto.
