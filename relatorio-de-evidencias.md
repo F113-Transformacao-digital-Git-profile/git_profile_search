@@ -1,5 +1,11 @@
 # Relatório de Evidências — Transformação Digital F113
 
+> 💡 **GUIA DA EQUIPE:** ALIMENTAR `relatorio-de-evidencias.md` com as mudanças feitas com prints importados da pasta `img-evidencias/`. 
+> Tire o print, coloque na pasta `img-evidencias/`, copie o caminho relativo, faça um breve relato da mudança e coloque tudo no doc `relatorio-de-evidencias.md`.
+
+
+
+
 ## Etapa 2: Pipeline CI/CD, Deploy e Monitoramento
 
 ### Tarefa: [INFRA] Configurar projetos na Vercel (main e dev)
