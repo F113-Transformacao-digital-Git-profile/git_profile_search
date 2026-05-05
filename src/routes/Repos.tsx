@@ -33,8 +33,11 @@ const Repos = () => {
     const loadRepos = async (username: string) => {
       // Define 'isLoading' como true para indicar que os dados estão sendo carregados
       setIsLoading(true);
+      const token = import.meta.env.VITE_GITHUB_TOKEN;
+      const headers: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
+
       // Faz uma requisição para a API do GitHub para obter os repositórios do usuário
-      const res = await fetch(`https://api.github.com/users/${username}/repos`);
+      const res = await fetch(`https://api.github.com/users/${username}/repos`, { headers });
       // Converte a resposta para JSON
       const data = await res.json();
       // Define 'isLoading' como false para indicar que os dados foram carregados
