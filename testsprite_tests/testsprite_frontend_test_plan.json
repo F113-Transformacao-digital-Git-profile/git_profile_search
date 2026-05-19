@@ -1,0 +1,243 @@
+[
+  {
+    "id": "TC001",
+    "title": "Searches for a valid user and shows the profile details",
+    "description": "This verifies that a visitor can search for a GitHub username and see the user's profile information after loading completes.",
+    "category": "GitHub User Search",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search input with a valid GitHub username"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a loading state is shown and then the user profile is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the avatar, login, location, followers, and following details are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Shows a not-found state for an unknown user",
+    "description": "This verifies that searching for a nonexistent GitHub username results in an error state instead of a profile.",
+    "category": "GitHub User Search",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search input with a nonexistent GitHub username"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a not-found error state is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Searches with the keyboard and opens the profile repositories view",
+    "description": "This verifies that a visitor can submit a user search with Enter and then navigate to the repositories view from the profile.",
+    "category": "GitHub User Search",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search input with a valid GitHub username"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "action",
+        "description": "Open the profile repositories view"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the repositories view is displayed for the searched user"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the top repositories list is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Opens the top five repositories for a user from the profile",
+    "description": "This verifies that a visitor can open the repositories view from a profile and see the user's top five repositories sorted by stars.",
+    "category": "View Top Repositories",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search input with a valid GitHub username"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "action",
+        "description": "Open the profile repositories view"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the top five repositories are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the repositories are sorted by stars"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Rejects an empty search submission",
+    "description": "This verifies that submitting an empty search shows an invalid-search outcome instead of a profile.",
+    "category": "GitHub User Search",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Leave the search input empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an invalid-search or validation error is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Shows repository details for each top repository",
+    "description": "This verifies that the repositories view shows each repository's name, language, stars, and forks.",
+    "category": "View Top Repositories",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /repos/a-valid-github-username"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the repository list is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify repository name, language, stars, and forks are displayed for the listed repositories"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Returns to the profile from the repositories view",
+    "description": "This verifies that a visitor can return from the repositories view back to the previously viewed profile.",
+    "category": "View Top Repositories",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the search input with a valid GitHub username"
+      },
+      {
+        "type": "action",
+        "description": "Submit the search"
+      },
+      {
+        "type": "action",
+        "description": "Open the profile repositories view"
+      },
+      {
+        "type": "action",
+        "description": "Return to the previous page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user profile is displayed again"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC008",
+    "title": "Loads the repositories view directly for a username",
+    "description": "This verifies that a direct visit to a user's repositories route shows the repository list without requiring prior navigation.",
+    "category": "View Top Repositories",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /repos/a-valid-github-username"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the repositories view is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the top repositories list is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC009",
+    "title": "Opens a repository in GitHub from the repositories view",
+    "description": "This verifies that a visitor can open a repository from the repositories view in a new browser tab.",
+    "category": "View Top Repositories",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /repos/a-valid-github-username"
+      },
+      {
+        "type": "action",
+        "description": "Open a repository on GitHub"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the repository opens as an external GitHub destination in a new tab"
+      }
+    ],
+    "priority": "Low"
+  }
+]

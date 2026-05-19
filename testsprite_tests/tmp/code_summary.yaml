@@ -1,0 +1,62 @@
+version: "2"
+type: frontend
+tech_stack:
+  - TypeScript
+  - React 18
+  - Vite 5
+  - React Router DOM 6
+  - CSS Modules
+  - GitHub REST API
+routes:
+  - path: /
+    file: src/routes/Home.tsx
+    auth_required: false
+    description: Home page with GitHub user search
+  - path: /repos/:username
+    file: src/routes/Repos.tsx
+    auth_required: false
+    description: Top 5 starred repositories for a GitHub user
+features:
+  - name: GitHub User Search
+    description: Search for a GitHub user by username and display profile information
+    files:
+      - src/routes/Home.tsx
+      - src/components/Search.tsx
+      - src/components/User.tsx
+      - src/components/Loader.tsx
+      - src/components/Error.tsx
+    entry_route: /
+    user_interactions:
+      - Type a GitHub username in the search input
+      - Click the search button or press Enter to search
+      - See loading spinner while fetching user data
+      - View user avatar, login, location, followers and following counts
+      - See error message when user is not found
+    api_calls:
+      - method: GET
+        endpoint: https://api.github.com/users/{username}
+    auth_required: false
+  - name: View Top Repositories
+    description: Navigate from user profile to see top 5 repositories sorted by stars
+    files:
+      - src/routes/Repos.tsx
+      - src/components/Repo.tsx
+      - src/components/BackBtn.tsx
+      - src/components/Loader.tsx
+    entry_route: /repos/:username
+    user_interactions:
+      - Click "Ver melhores projetos" link on user profile
+      - View list of top 5 repositories with name, language, stars and forks
+      - Click "Ver código" to open repository on GitHub in new tab
+      - Click "Voltar" button to go back to previous page
+    api_calls:
+      - method: GET
+        endpoint: https://api.github.com/users/{username}/repos
+    auth_required: false
+known_limitations:
+  - issue: GitHub API rate limits apply without VITE_GITHUB_TOKEN
+    location: src/routes/Home.tsx
+    impact: Frequent searches may fail or return 403 under rate limit
+  - issue: Empty search submits API request with empty username
+    location: src/components/Search.tsx
+    impact: Searching with empty input triggers invalid API call
