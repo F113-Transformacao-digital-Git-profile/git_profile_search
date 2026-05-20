@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 .env
+.cursor/mcp.json
+testsprite_tests/tmp/config.json
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -23,3 +25,10 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+#Docs
+
+ANALISE_CODIGO.md
+Testsprit.json
+relatorio-de-evidencias.md
+
