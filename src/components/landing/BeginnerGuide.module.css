@@ -1,0 +1,116 @@
+.beginner_guide {
+  padding: var(--landing-section-padding) 20px;
+  background: var(--gh-bg);
+  border-top: 1px solid var(--gh-border-soft);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.intro {
+  color: var(--gh-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 620px;
+}
+
+.steps_grid {
+  margin-top: 36px;
+  display: grid;
+  gap: var(--landing-section-gap);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.guide_card {
+  background: var(--gh-surface);
+  border: var(--landing-card-border);
+  border-radius: var(--landing-card-radius);
+  padding: var(--landing-card-padding);
+  box-shadow: var(--landing-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.guide_card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(88, 166, 255, 0.35);
+  box-shadow: var(--landing-card-shadow-hover);
+}
+
+.card_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.04));
+  border: 1px solid rgba(88, 166, 255, 0.1);
+  display: grid;
+  place-items: center;
+  color: var(--gh-blue);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+}
+
+.guide_card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 0.4vw + 0.92rem, 1.2rem);
+  letter-spacing: -0.01em;
+  color: var(--gh-text-bright);
+}
+
+.items_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--gh-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.items_list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.items_list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--gh-blue);
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.tip {
+  margin-top: auto;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px dashed rgba(88, 166, 255, 0.2);
+  color: var(--gh-text);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+}
+
+.tip strong {
+  color: var(--gh-blue);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .beginner_guide {
+    padding: var(--landing-section-padding) 16px;
+  }
+}

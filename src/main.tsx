@@ -10,7 +10,8 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
-// Importando os componentes Home e Repos
+// Importando os componentes Landing, Explore e Repos
+import Landing from "./routes/Landing.tsx";
 import Home from "./routes/Home.tsx";
 import Repos from "./routes/Repos.tsx";
 
@@ -26,9 +27,14 @@ const router = createBrowserRouter([
     // Subrotas
     children: [
       {
-        // Rota
+        // Rota da landing page
         path: "/",
         // Componente que será renderizado na rota
+        element: <Landing />,
+      },
+      {
+        // Rota de exploração de perfis (antiga Home)
+        path: "/explore",
         element: <Home />,
       },
       {

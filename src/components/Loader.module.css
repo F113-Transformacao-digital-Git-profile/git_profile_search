@@ -1,20 +1,28 @@
 /* Define a animação de rotação */
 @keyframes rotate {
-    from {
-      transform: rotate(0deg); /* Inicia a rotação em 0 graus */
-    }
-    to {
-      transform: rotate(360deg); /* Termina a rotação em 360 graus */
-    }
+  from {
+    transform: rotate(0deg); /* Inicia a rotação em 0 graus */
   }
-  
-  /* Estiliza o elemento com a classe 'loader' */
+  to {
+    transform: rotate(360deg); /* Termina a rotação em 360 graus */
+  }
+}
+
+/* Estiliza o elemento com a classe 'loader' */
+.loader {
+  animation: rotate 1.6s linear infinite; /* Aplica a animação de rotação com duração de 1.6 segundos */
+  display: block; /* Mantém o spinner centralizado no fluxo da página */
+  width: 40px; /* Define largura consistente */
+  height: 40px; /* Define altura consistente */
+  margin: 40px auto 0; /* Centraliza horizontalmente com espaçamento superior */
+  font-size: 40px; /* Define o tamanho da fonte como 40px */
+  line-height: 1; /* Evita altura extra no ícone */
+  color: var(--gh-blue); /* Usa o token principal do tema */
+}
+
+@media (prefers-reduced-motion: reduce) {
   .loader {
-    animation: rotate 2s linear infinite; /* Aplica a animação de rotação com duração de 2 segundos, de forma linear e infinita */
-    position: absolute; /* Posiciona o elemento de forma absoluta */
-    left: 50%; /* Centraliza o elemento horizontalmente */
-    margin-top: 40px; /* Adiciona margem superior de 40px */
-    font-size: 50px; /* Define o tamanho da fonte como 50px */
-    margin-left: -25px; /* Ajusta a margem esquerda para centralizar o elemento */
+    animation: none; /* Respeita a preferência de movimento reduzido */
   }
+}
   

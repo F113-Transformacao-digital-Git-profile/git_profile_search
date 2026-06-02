@@ -1,11 +1,13 @@
 // Importa os hooks useState e useEffect do React
 import { useState, useEffect } from "react";
 // Importa o hook useParams do react-router-dom para acessar os parâmetros da URL
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { FiInbox } from "react-icons/fi";
 // Importa o componente BackBtn
 import BackBtn from "../components/BackBtn";
 // Importa os estilos do arquivo CSS Repos.module.css
 import classes from "./Repos.module.css";
+import appClasses from "../App.module.css";
 // Importa o tipo RepoPros do arquivo de tipos
 import { RepoProps } from "../types/repo";
 // Importa o componente Loader
@@ -63,11 +65,24 @@ const Repos = () => {
   return (
     <div className={classes.repos}>
       {/* Renderiza o componente BackBtn */}
-      <BackBtn />
+      <BackBtn fallbackTo="/explore" />
       {/* Exibe o texto "Explore os repositórios do usuário" seguido pelo valor de 'username' */}
       <h2>Explore os repositórios do usuário: {username}</h2>
       {/* Se não houver repositórios, exibe uma mensagem */}
-      {repos && repos.length === 0 && <p>Não há repositório.</p>}
+      {repos && repos.length === 0 && (
+        <div className={appClasses.stateCard}>
+          <div className={appClasses.stateIcon} aria-hidden="true">
+            <FiInbox />
+          </div>
+          <h3 className={appClasses.stateTitle}>Nenhum repositório encontrado</h3>
+          <p className={appClasses.stateDescription}>
+            Esse usuário ainda não publicou repositórios públicos.
+          </p>
+          <Link className={appClasses.stateAction} to="/explore">
+            Buscar outro usuário
+          </Link>
+        </div>
+      )}
       {/* Se houver repositórios, mapeia e exibe os nomes dos repositórios */}
       {repos && repos.length > 0 && (
         <div className={classes.repos_container}>

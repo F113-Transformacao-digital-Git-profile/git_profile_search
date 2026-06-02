@@ -18,11 +18,19 @@ const Search = ({ loadUser }: SearchProps) => {
   // O estado inicial é uma string vazia
   const [userName, setUserName] = useState("");
 
+  const normalizedUserName = userName.trim();
+  const canSearch = normalizedUserName.length > 0;
+
+  const handleSearch = () => {
+    if (!canSearch) return;
+    loadUser(normalizedUserName);
+  };
+
   // Função que lida com o evento de pressionar uma tecla
   // Se a tecla pressionada for "Enter", chama a função loadUser com o userName atual
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
-      loadUser(userName);
+      handleSearch();
     }
   };
 
@@ -37,17 +45,18 @@ const Search = ({ loadUser }: SearchProps) => {
       <div className={classes.search_container}>
         {/* Campo de entrada de texto para digitar o nome do usuário */}
         <input
+          id="search-input"
           type="text"
           placeholder="Digite o nome do usuário"
+          value={userName}
           // Atualiza o estado userName sempre que o valor do input mudar
           onChange={(e) => setUserName(e.target.value)}
           // Chama a função handleKeyDown ao pressionar uma tecla
           onKeyDown={handleKeyDown}
         />
         {/* Botão que, ao ser clicado, chama a função loadUser passando o userName como argumento */}
-        <button onClick={() => loadUser(userName)}>
-          {/* Ícone de busca dentro do botão */}
-          <BsSearch />
+        <button onClick={handleSearch} disabled={!canSearch}><h3>Buscar   <BsSearch /></h3>
+          {/* Ícone de busca dentro do botão */}          
         </button>
       </div>
     </div>

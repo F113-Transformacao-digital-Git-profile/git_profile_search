@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 .env
-.cursor/mcp.json
+.cursor
 testsprite_tests/tmp/config.json
 # Editor directories and files
 .vscode/*

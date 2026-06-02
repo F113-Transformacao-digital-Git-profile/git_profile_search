@@ -1,19 +1,27 @@
-/* Estiliza o botão de voltar */
 .back_btn {
-    position: absolute; /* Posiciona o botão de forma absoluta */
-    top: 1rem; /* Define a posição do botão a 1rem do topo */
-    left: 1rem; /* Define a posição do botão a 1rem da esquerda */
-    padding: 0.5rem 1rem; /* Define o espaçamento interno do botão */
-    color: #9da5da; /* Define a cor do texto do botão */
-    background-color: #2b3566; /* Define a cor de fundo do botão */
-    cursor: pointer; /* Define o cursor como pointer ao passar sobre o botão */
-    border: none; /* Remove qualquer borda do botão */
-    border-radius: 5px; /* Define bordas arredondadas */
-    opacity: 0.9; /* Define a opacidade do botão */
-  }
-  
-  /* Estiliza o botão de voltar ao passar o mouse sobre ele */
-  .back_btn:hover {
-    opacity: 1; /* Define a opacidade como 1 ao passar o mouse sobre o botão */
-  }
-  
+  position: sticky;
+  top: 76px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: #f0f6fc;
+  background: var(--gh-green);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(35, 134, 54, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.back_btn:hover {
+  background: var(--gh-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(35, 134, 54, 0.35);
+}
+
+.back_btn:focus-visible {
+  outline: 2px solid var(--gh-blue);
+  outline-offset: 2px;
+}

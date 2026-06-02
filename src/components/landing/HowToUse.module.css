@@ -1,0 +1,111 @@
+.how_to_use {
+  padding: var(--landing-section-padding) 20px;
+  background: var(--gh-bg);
+  border-top: 1px solid var(--gh-border-soft);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: var(--gh-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 620px;
+}
+
+.steps_container {
+  margin-top: 36px;
+  display: grid;
+  gap: var(--landing-section-gap);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--gh-surface);
+  border: var(--landing-card-border);
+  border-radius: var(--landing-card-radius);
+  box-shadow: var(--landing-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  align-items: start;
+}
+
+.step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(88, 166, 255, 0.35);
+  box-shadow: var(--landing-card-shadow-hover);
+}
+
+.step:focus-within {
+  border-color: rgba(88, 166, 255, 0.45);
+}
+
+.step_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.12), rgba(88, 166, 255, 0.04));
+  border: 1px solid rgba(88, 166, 255, 0.1);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: var(--gh-blue);
+}
+
+.step_content h3 {
+  margin: 0 0 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 0.4vw + 0.92rem, 1.2rem);
+  letter-spacing: -0.01em;
+}
+
+.step_number {
+  font-family: var(--font-display);
+  color: var(--gh-blue);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  opacity: 0.7;
+}
+
+.step_content p {
+  margin: 0;
+  color: var(--gh-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+@media (min-width: 860px) {
+  .steps_container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .how_to_use {
+    padding: var(--landing-section-padding) 16px;
+  }
+
+  .step {
+    grid-template-columns: 44px 1fr;
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .step_icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+}
