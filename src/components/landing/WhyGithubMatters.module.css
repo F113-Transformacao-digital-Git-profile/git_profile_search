@@ -1,0 +1,79 @@
+.why_github {
+  padding: var(--landing-section-padding) 20px;
+  background: var(--gh-bg);
+  border-top: 1px solid var(--gh-border-soft);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: var(--gh-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 620px;
+}
+
+.cards_grid {
+  margin-top: 36px;
+  display: grid;
+  gap: var(--landing-section-gap);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--gh-surface);
+  border: var(--landing-card-border);
+  border-radius: var(--landing-card-radius);
+  padding: var(--landing-card-padding);
+  box-shadow: var(--landing-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(88, 166, 255, 0.35);
+  box-shadow: var(--landing-card-shadow-hover);
+}
+
+.card_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.12), rgba(88, 166, 255, 0.04));
+  border: 1px solid rgba(88, 166, 255, 0.1);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  color: var(--gh-blue);
+}
+
+.card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 0.4vw + 0.92rem, 1.2rem);
+  letter-spacing: -0.01em;
+  color: var(--gh-text-bright);
+}
+
+.card p {
+  margin: 0;
+  color: var(--gh-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 640px) {
+  .why_github {
+    padding: var(--landing-section-padding) 16px;
+  }
+}

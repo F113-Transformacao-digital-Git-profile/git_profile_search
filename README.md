@@ -4,8 +4,10 @@ GitHub Finder é uma aplicação web que permite aos usuários buscar perfis do 
 
 - **Veja Online:** https://gitprofilesearch.vercel.app
 
-![Projeto](./public/ImgDesktopSiteTela1.jpg)
-![Projeto](./public/ImgDesktopSiteTela2.jpg)
+![Projeto](./public/ImgLandingPage.jpg)
+![Projeto](./public/NovaImgDesktopSiteTela1.jpg)
+![Projeto](./public/NovaImgDesktopSiteTela2.jpg)
+
 
 ## Funcionalidades
 

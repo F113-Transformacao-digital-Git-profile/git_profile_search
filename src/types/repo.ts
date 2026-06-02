@@ -2,10 +2,12 @@
 export type RepoProps = {
     // Propriedade 'name' do tipo string, que representa o nome do repositório
     name: string;
+    // Propriedade 'description' do tipo string, que representa a descrição do repositório
+    description: string | null;
     // Propriedade 'html_url' do tipo string, que representa a URL do repositório
     html_url: string;
     // Propriedade 'language' do tipo string, que representa a linguagem de programação usada no repositório
-    language: string;
+    language: string | null;
     // Propriedade 'stargazers_count' do tipo number, que representa o número de estrelas que o repositório recebeu
     stargazers_count: number;
     // Propriedade 'forks_count' do tipo number, que representa o número de forks do repositório

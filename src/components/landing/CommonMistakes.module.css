@@ -1,0 +1,137 @@
+.common_mistakes {
+  padding: var(--landing-section-padding) 20px;
+  background: var(--gh-bg);
+  border-top: 1px solid var(--gh-border-soft);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: var(--gh-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 620px;
+}
+
+.mistakes_grid {
+  margin-top: 48px;
+  display: grid;
+  gap: var(--landing-section-gap);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.mistake_card {
+  background: var(--gh-surface);
+  border: var(--landing-card-border);
+  border-radius: var(--landing-card-radius);
+  padding: var(--landing-card-padding);
+  box-shadow: var(--landing-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.mistake_card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(248, 81, 73, 0.25);
+  box-shadow: var(--landing-card-shadow-hover);
+}
+
+/* ── Mistake (Bad) Section ── */
+.mistake_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error_icon {
+  font-size: 1.25rem;
+  color: var(--gh-danger);
+  flex-shrink: 0;
+}
+
+.mistake_card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-base);
+  letter-spacing: -0.01em;
+  color: #ffb4ae;
+}
+
+.mistake_section {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(248, 81, 73, 0.12);
+  background: rgba(248, 81, 73, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bad_example {
+  margin: 0;
+  color: rgba(255, 180, 174, 0.85);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  font-family: var(--font-display);
+  letter-spacing: -0.005em;
+}
+
+.problem {
+  margin: 0;
+  color: var(--gh-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+/* ── Solution (Good) Section ── */
+.solution_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.success_icon {
+  font-size: 1.25rem;
+  color: #3fb950;
+  flex-shrink: 0;
+}
+
+.solution_header h4 {
+  margin: 0;
+  color: #3fb950;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-base);
+  letter-spacing: -0.01em;
+}
+
+.solution_section {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(35, 134, 54, 0.15);
+  background: rgba(35, 134, 54, 0.03);
+}
+
+.good_example {
+  margin: 0;
+  color: var(--gh-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 640px) {
+  .common_mistakes {
+    padding: var(--landing-section-padding) 16px;
+  }
+}

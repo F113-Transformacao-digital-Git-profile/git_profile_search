@@ -1,67 +1,174 @@
 .user {
-    background-color: #2b3566; /* Define a cor de fundo do contêiner do usuário */
-    padding: 2rem; /* Adiciona um espaçamento interno de 2 rem ao redor do contêiner */
-    border-radius: 1rem; /* Arredonda os cantos do contêiner com um raio de 1 rem */
-    display: flex; /* Define o contêiner como um flexbox */
-    flex-direction: column; /* Organiza os itens dentro do contêiner em uma coluna */
-    align-items: center; /* Alinha os itens no centro horizontalmente */
-    justify-content: center; /* Alinha os itens no centro verticalmente */
-    gap: 1.2rem; /* Adiciona um espaçamento de 1.2 rem entre os itens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 28px;
+    border: 1px solid var(--gh-border);
+    border-radius: 16px;
+    background: var(--gh-surface);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+    text-align: center;
+}
+
+.user h2,
+.user p {
+    margin: 0;
+}
+
+.user_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .user img {
-    width: 140px; /* Define a largura da imagem do avatar como 140 pixels */
-    height: 140px; /* Define a altura da imagem do avatar como 140 pixels */
-    border: 4px solid #644aff; /* Adiciona uma borda de 4 pixels de largura e cor #644aff ao redor da imagem */
-    border-radius: 50%; /* Arredonda a imagem para que fique circular */
+    width: 144px;
+    height: 144px;
+    border: 1px solid var(--gh-border);
+    border-radius: 999px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.user_titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.user h2 {
+    font-size: 1.4rem;
+    color: #e6edf3;
+    letter-spacing: -0.01em;
+}
+
+.handle {
+    color: var(--gh-text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.bio {
+    max-width: 520px;
+    color: var(--gh-text);
+    line-height: 1.6;
 }
 
 .location {
-    display: flex; /* Define o contêiner de localização como um flexbox */
-    align-items: center; /* Alinha os itens no centro verticalmente */
-    gap: 0.4rem; /* Adiciona um espaçamento de 0.4 rem entre os itens */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--gh-text-muted);
+    font-size: 0.95rem;
 }
 
 .location svg {
-    fill: #4ed8c7; /* Define a cor de preenchimento do ícone de localização */
-    font-size: 1.5rem; /* Define o tamanho da fonte do ícone de localização */
+    color: var(--gh-text-muted);
+    font-size: 1.2rem;
 }
 
 .location span {
-    color: #9da5d1; /* Define a cor do texto da localização */
-    font-weight: bold; /* Define o peso da fonte do texto da localização como negrito */
+    color: var(--gh-text-muted);
+    font-weight: 500;
 }
 
 .stats {
-    display: flex; /* Define o contêiner de estatísticas como um flexbox */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.85rem;
 }
 
 .stats div {
-    padding: 0 1rem; /* Adiciona um espaçamento interno horizontal de 1 rem */
-    display: flex; /* Define cada div de estatísticas como um flexbox */
-    flex-direction: column; /* Organiza os itens dentro de cada div em uma coluna */
-    gap: 0.4rem; /* Adiciona um espaçamento de 0.4 rem entre os itens */
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 12px 16px;
+    border: 1px solid var(--gh-border);
+    border-radius: 10px;
+    background: var(--gh-surface-2);
+    text-align: center;
 }
 
-.stats div:first-child {
-    border-right: 1px solid #9da5d1; /* Adiciona uma borda direita de 1 pixel de largura e cor #9da5d1 à primeira div de estatísticas */
+.stats p {
+    color: var(--gh-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .stats .number {
-    background-color: #4ed8c7; /* Define a cor de fundo dos números de estatísticas */
-    padding: 0.2rem 0.4rem; /* Adiciona um espaçamento interno de 0.2 rem verticalmente e 0.4 rem horizontalmente */
-    border-radius: 3px; /* Arredonda os cantos dos números de estatísticas com um raio de 3 pixels */
+    color: var(--gh-text);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
-.user a {
-    text-align: center; /* Alinha o texto do link ao centro */
-    background-color: #644aff; /* Define a cor de fundo do link */
-    padding: 1rem; /* Adiciona um espaçamento interno de 1 rem ao link */
-    border-radius: 5px; /* Arredonda os cantos do link com um raio de 5 pixels */
-    opacity: 0.8; /* Define a opacidade inicial do link */
-    transition: 0.3s; /* Define a duração da transição para mudanças de opacidade */
+.links {
+    width: 100%;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
-.user a:hover {
-    opacity: 1; /* Define a opacidade do link como 1 (totalmente opaco) quando o mouse está sobre ele */
+.primary_link,
+.secondary_link {
+    flex: 1 1 220px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.primary_link {
+    background: var(--gh-green);
+    color: #f0f6fc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 28px rgba(35, 134, 54, 0.35);
+}
+
+.primary_link:hover {
+    text-decoration: none;
+    background: var(--gh-green-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(35, 134, 54, 0.45);
+}
+
+.secondary_link {
+    background: var(--gh-btn-bg);
+    border: 1px solid var(--gh-border);
+    color: var(--gh-text);
+}
+
+.secondary_link:hover {
+    text-decoration: none;
+    background: var(--gh-btn-hover);
+    border-color: var(--gh-border);
+}
+
+.primary_link:focus-visible,
+.secondary_link:focus-visible {
+    outline: 2px solid var(--gh-blue);
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .user {
+        padding: 22px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .links {
+        flex-direction: column;
+    }
 }

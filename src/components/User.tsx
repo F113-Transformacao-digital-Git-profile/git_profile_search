@@ -13,17 +13,30 @@ import classes from "./User.module.css";
 // Definindo o componente funcional User que recebe as props do tipo UserProps
 const User = ({
   login, // Nome de usuário
+  name, // Nome público do usuário
   avatar_url, // URL do avatar do usuário
+  bio, // Bio do usuário
+  html_url, // URL do perfil no GitHub
   followers, // Número de seguidores
   following, // Número de pessoas que o usuário está seguindo
+  public_repos, // Número de repositórios públicos
   location, // Localização do usuário
 }: UserProps) => {
+  const displayName = name ?? login;
+
   return (
     <div className={classes.user}>
-      {/* Imagem do avatar do usuário */}
-      <img src={avatar_url} alt={login} />
-      {/* Nome de usuário */}
-      <h2>{login}</h2>
+      <div className={classes.user_header}>
+        {/* Imagem do avatar do usuário */}
+        <img src={avatar_url} alt={login} />
+        <div className={classes.user_titles}>
+          {/* Nome de usuário */}
+          <h2>{displayName}</h2>
+          <p className={classes.handle}>@{login}</p>
+        </div>
+      </div>
+
+      {bio && <p className={classes.bio}>{bio}</p>}
 
       {/* Localização do usuário, renderizada apenas se estiver definida */}
       {location && (
@@ -43,10 +56,21 @@ const User = ({
           <p>Seguindo:</p>
           <p className={classes.number}>{following}</p>
         </div>
+        <div>
+          <p>Repos:</p>
+          <p className={classes.number}>{public_repos}</p>
+        </div>
       </div>
 
-      {/* Link para ver os melhores projetos do usuário */}
-      <Link to={`/repos/${login}`}>Ver melhores projetos</Link>
+      <div className={classes.links}>
+        <a className={classes.primary_link} href={html_url} target="_blank" rel="noreferrer">
+          Ver perfil no GitHub
+        </a>
+        {/* Link para ver os melhores projetos do usuário */}
+        <Link className={classes.secondary_link} to={`/repos/${login}`}>
+          Ver melhores projetos
+        </Link>
+      </div>
     </div>
   );
 };
